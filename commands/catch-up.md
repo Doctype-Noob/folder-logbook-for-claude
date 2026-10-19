@@ -11,7 +11,7 @@ Catch-up only reads past chats and only adds files. It never edits, renames or d
    - You need Claude's past-chat tools (search past chats, list recent chats, read a past chat). If they aren't available, tell the user in two sentences: catch-up runs in the Claude app with Settings > Search and reference chats turned on. Stop there.
    - You need the logbook folder. If no Start Here.md is reachable, tell the user to connect the logbook folder in the Claude desktop app (+ menu, Add folder) and run catch-up again; offer `/laronge-folder-logbook:setup` only if they haven't set up a logbook yet. Stop there.
 
-2. **Set the window.** Use the window the user gave. If none, the last 14 days. If the user said "since I installed it" or similar, use the date of the first Activity Log entry.
+2. **Set the window.** Use the window the user gave. If none, the last 14 days or since the logbook's first Activity Log entry, whichever is shorter: chats from before the logbook existed aren't missing, they just predate it. If that cut anything off, say so in one line at the end ("Older chats go back to [date]; give me a date if you want those too.").
 
 3. **Know what you can see.** Past-chat tools only see one scope at a time: inside a Claude Project, that project's chats; in a regular chat, regular chats only. Say which scope this run covers in the list's first line, and at the end name the other scope the user would run catch-up from to cover the rest ("Run this again inside each Claude Project to check its chats."). The list can also miss chats from other surfaces (some desktop sessions don't show in past-chat search), so call it "the chats I can see", never "all your chats".
 
@@ -25,7 +25,7 @@ Catch-up only reads past chats and only adds files. It never edits, renames or d
 
    If a match is likely but not sure (same day, similar topic, different title), count it as logged and list it under "Probably logged" so the user can say otherwise. Never log a chat twice.
 
-6. **Show the list and wait.** One numbered line per unlogged chat, newest first: date, title, and a short fragment of the first prompt (up to 10 words). Then the "Probably logged" lines, if any. Then ask which to log: numbers, "all", or "none". Suggest leaving out quick lookups and one-line questions, but let the user decide. Do not write anything before they answer.
+6. **Show the list and wait.** Start with one line in this shape: "Chats I can see from [start] to [today] ([regular chats / this Claude Project's chats]) with no entry in this logbook:". Then one numbered line per unlogged chat, newest first: date, title, and a short fragment of the first prompt (up to 10 words). Then the "Probably logged" lines, if any. Then ask which to log: numbers, "all", or "none". Suggest leaving out quick lookups and one-line questions, but let the user decide. Do not write anything before they answer.
 
 7. **Place each picked chat.** For each one, pick where it goes from Start Here's project table: the Claude Project it came from, else the project its topic clearly belongs to, else Other chats/ as a one-off. If two projects fit, or the chat is clearly ongoing work with no project yet, ask once for all the uncertain ones in a single question. Create a project's folder, dashboard and Start Here row first if it's new, as the skill describes.
 

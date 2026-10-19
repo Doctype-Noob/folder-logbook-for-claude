@@ -2,7 +2,7 @@
 
 ## 0.1.6 (2026-10-19)
 
-- New: `catch-up` command finds recent chats with no entry in the logbook (last 14 days by default), lists them, and logs the ones you pick, up to 5 per run. It matches on chat links, file names and the first prompt in each Activity Log entry, so it never logs a chat twice.
+- New: `catch-up` command finds recent chats with no entry in the logbook (last 14 days by default, or since the logbook started if that's more recent), lists them, and logs the ones you pick, up to 5 per run. It matches on chat links, file names and the first prompt in each Activity Log entry, so it never logs a chat twice.
 - Format: a caught-up chat file adds "Caught up YYYY-MM-DD · Chat link" to its header line; a catch-up run adds one Activity Log entry for the whole run.
 - Session-start note lists all four commands.
 
