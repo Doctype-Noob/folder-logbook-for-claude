@@ -1,0 +1,15 @@
+{
+  "name": "laronge-folder-logbook",
+  "owner": {
+    "name": "Josh Laronge",
+    "url": "https://laronge.com"
+  },
+  "description": "Folder Logbook for Claude, a free plugin by Josh Laronge (laronge.com).",
+  "plugins": [
+    {
+      "name": "laronge-folder-logbook",
+      "source": "./",
+      "description": "Keeps a record of your work with Claude as Markdown files in a folder you pick: a Start Here map, a dashboard per project, one file per chat with your prompts and Claude's responses, and an activity log."
+    }
+  ]
+}
