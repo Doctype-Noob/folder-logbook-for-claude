@@ -13,7 +13,7 @@ Catch-up only reads past chats and only adds files. It never edits, renames or d
 
 2. **Set the window.** Use the window the user gave. If none, the last 14 days. If the user said "since I installed it" or similar, use the date of the first Activity Log entry.
 
-3. **Know what you can see.** Past-chat tools only see one scope at a time: inside a Claude Project, that project's chats; in a regular chat, regular chats only. Say which scope this run covers in the list's first line, and at the end name the other scope the user would run catch-up from to cover the rest ("Run this again inside each Claude Project to check its chats.").
+3. **Know what you can see.** Past-chat tools only see one scope at a time: inside a Claude Project, that project's chats; in a regular chat, regular chats only. Say which scope this run covers in the list's first line, and at the end name the other scope the user would run catch-up from to cover the rest ("Run this again inside each Claude Project to check its chats."). The list can also miss chats from other surfaces (some desktop sessions don't show in past-chat search), so call it "the chats I can see", never "all your chats".
 
 4. **List recent chats.** List chats updated in the window, newest first, paging the recent-chats list (20 per call, at most 5 calls). Leave out this chat. Keep each chat's title, date, link, and its first prompt from the list or a search hit; don't open whole chats yet.
 
