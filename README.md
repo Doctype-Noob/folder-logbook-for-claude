@@ -61,6 +61,7 @@ The logbook is a few hundred kilobytes of text, so the free tier of any cloud dr
 - `/laronge-folder-logbook:setup` sets up the folder, or adopts a logbook you already have.
 - `/laronge-folder-logbook:log-session` logs the current chat right now.
 - `/laronge-folder-logbook:backfill` logs a project's earlier chats, 3 on the first run and 5 at a time after that. Run it from a chat inside that project's Claude Project, with Search and reference chats turned on.
+- `/laronge-folder-logbook:catch-up` finds chats from the last two weeks that never got logged and logs the ones you pick. Claude can only see one scope at a time, so run it in a regular chat for regular chats and inside each Claude Project for that project's.
 
 After setup you don't need any of them.
 

@@ -95,7 +95,7 @@ File: `[Project]/[Chat name] — Decisions and Prompt Log.md`. The chat name is 
 </details>
 ```
 
-Use "User" if Start Here gives no first name. A backfilled chat adds "· Backfilled YYYY-MM-DD · Chat link: [url]" to the header line.
+Use "User" if Start Here gives no first name. A backfilled chat adds "· Backfilled YYYY-MM-DD · Chat link: [url]" to the header line; a chat logged by catch-up adds "· Caught up YYYY-MM-DD · Chat link: [url]".
 
 At a wrap-up, add at the end:
 
@@ -173,7 +173,7 @@ One sentence. See [Chat name](relative link to the chat file).
 > First prompt: the user's first prompt in the chat, word for word (the first paragraph if it's long)
 ```
 
-A backfill run adds one entry for the whole batch, on the day it ran, linking each new chat file, instead of one per chat.
+A backfill run adds one entry for the whole batch, on the day it ran, linking each new chat file, instead of one per chat. A catch-up run does the same, with the project "Catch-up" and one bullet per chat giving its date, project and link.
 
 For a one-off chat, the project is "Other" and the link points into `Other chats/`.
 
