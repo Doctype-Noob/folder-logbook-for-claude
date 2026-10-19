@@ -9,6 +9,10 @@
   },
   "homepage": "https://laronge.com",
   "repository": "https://github.com/Doctype-Noob/folder-logbook-for-claude",
+  "documentationUrl": "https://github.com/Doctype-Noob/folder-logbook-for-claude#readme",
+  "supportUrl": "https://github.com/Doctype-Noob/folder-logbook-for-claude/issues",
+  "privacyPolicyUrl": "https://github.com/Doctype-Noob/folder-logbook-for-claude/blob/main/PRIVACY.md",
+  "termsOfServiceUrl": "https://github.com/Doctype-Noob/folder-logbook-for-claude/blob/main/TERMS.md",
   "license": "MIT",
   "keywords": [
     "markdown",
