@@ -8,6 +8,7 @@ Everything is plain Markdown, UTF-8, one file per page. Use square brackets for 
 
 ```
 [Logbook folder, default "Claude Logbook", in a synced drive]
+  📌 All Dashboards.md     (the file to keep handy: links every project dashboard)
   Start Here.md
   Activity Log.md
   Logbook Format.md        (this spec)
@@ -18,7 +19,7 @@ Everything is plain Markdown, UTF-8, one file per page. Use square brackets for 
     [Chat name] — Decisions and Prompt Log.md
 ```
 
-Project folders sit directly inside the logbook folder, next to Start Here. The 📌 at the front of the dashboard's file name is what makes it stand out in a file list, so never leave it off.
+Project folders sit directly inside the logbook folder, next to Start Here. The 📌 at the front of a file name is what makes it stand out in a file list, and it sorts the file above the others in Finder and most file apps, so never leave it off. There are no colors in Markdown; the 📌 and its place at the top of the folder do that job.
 
 Defaults when Start Here doesn't say otherwise: logging mode full.
 
@@ -32,7 +33,7 @@ Defaults when Start Here doesn't say otherwise: logging mode full.
 
 Relative Markdown links, with the path inside angle brackets so spaces, the 📌 and the em dash stay as they are. This reads cleanly in edit mode, which is how the OneDrive phone app opens files.
 
-- From Start Here to a dashboard: `[📌 Website — Overview and Chat Log](<Website/📌 Website — Overview and Chat Log.md>)`
+- From All Dashboards or Start Here to a dashboard: `[📌 Website — Overview and Chat Log](<Website/📌 Website — Overview and Chat Log.md>)`
 - From a dashboard to a chat file in the same folder: `[Open the chat file](<Website setup — Decisions and Prompt Log.md>)`
 - From the Activity Log to a chat file: `[Website setup](<Website/Website setup — Decisions and Prompt Log.md>)`
 
@@ -161,6 +162,36 @@ Status values: Active, Paused, On hold, Idea, Done, Cold case, Dropped.
 
 Headings stay plain text, with no links in them, because Markdown editors list headings in their outline sidebar and a link shows there as raw code. Number list items 1, 2, 3 in the file, since some editors show the numbers exactly as written.
 
+## All Dashboards
+
+File: `📌 All Dashboards.md`, one per logbook, at the top of the logbook folder next to Start Here.md. It's the file the user keeps handy: one line per project, each linking to that project's dashboard, so every chat is two clicks away.
+
+```
+# 📌 All Dashboards
+
+> Open this file first. It links to every project dashboard and is kept current by the AI that logs here. Last updated YYYY-MM-DD.
+
+## Project dashboards
+
+- [📌 Project](<Project/📌 Project — Overview and Chat Log.md>) · [Status] · YYYY-MM-DD
+- [📌 Older project](<Older project/📌 Older project — Overview and Chat Log.md>) · [Status] · YYYY-MM-DD
+
+## Projects without a dashboard yet
+
+- [Read first file](<relative path to it>) ([Project]) · [Status] · YYYY-MM-DD
+
+## Across all projects
+
+- [Start Here](<Start Here.md>): the map of this logbook.
+- [Activity Log](<Activity Log.md>): one entry per chat across every project, newest at the bottom.
+```
+
+- Each line is the link, then the project's status and last activity date, the same as its row in Start Here. Nothing else; the detail lives on the dashboard.
+- A new dashboard's line goes at the top of **Project dashboards**, right after the heading. Lines are updated in place after that, not reordered.
+- **Projects without a dashboard yet** holds the projects in Start Here's table that have no dashboard, linking to whatever their Read first links to. If that's nothing, write the project name without a link. When one gets a dashboard, its line moves up: add it at the top of Project dashboards and remove it here. Leave the section out if every project has a dashboard.
+- Projects marked Dropped stay in Start Here's table but come off this file.
+- Update "Last updated" in the quote line whenever a line changes.
+
 ## Activity Log entry
 
 File: `Activity Log.md`. One entry per chat per day, at the bottom (newest at the bottom). No responses; the chat file has them.
@@ -190,7 +221,7 @@ File: `Start Here.md`. Sections in this order. Section numbers help another AI f
 
 ## 1. How to find anything
 
-1. Find the project in the table in section 4. Open its dashboard (Read first).
+1. Open [📌 All Dashboards](<📌 All Dashboards.md>) and pick the project, or find it in the table in section 4. Open its dashboard (Read first).
 2. The dashboard lists every chat, newest first, with where each one left off. Open a chat's file for the prompts and responses word for word.
 3. For a timeline across all projects, read the [Activity Log](<Activity Log.md>).
 4. To write to this logbook from any AI, follow [Logbook Format](<Logbook Format.md>).
@@ -214,6 +245,11 @@ File: `Start Here.md`. Sections in this order. Section numbers help another AI f
 - Always-log preference: not yet (or added YYYY-MM-DD)
 - Logbook folder: [full path on this computer, such as ~/Library/CloudStorage/OneDrive-Personal/Claude Logbook]
 - Synced by: [OneDrive, iCloud Drive, Dropbox or Google Drive]
+- All Dashboards: [📌 All Dashboards](<📌 All Dashboards.md>)
+
+## 6. Keeping this file current
+
+When a chat changes a project's status or last activity, update its row here and its line in 📌 All Dashboards. A new project gets a row here, a folder with a 📌 dashboard, and a line at the top of All Dashboards.
 ```
 
 "Read first" holds a link to the project's dashboard.
@@ -224,8 +260,8 @@ Files have no blocks or IDs, so these rules keep them safe:
 
 - **Append, don't rebuild.** Add a new exchange or Activity Log entry by appending to the end of the file. Never write a file back from an earlier read; the read may have been cut short, and the rewrite would lose the rest.
 - **Edit header lines in place.** To update Summary, Result, Left off, a dashboard entry or a Start Here row, replace that one line by exact match. Leave the rest of the file alone.
-- **Newest chat first** on a dashboard: insert the new entry right after the "## Chats, newest first" heading.
-- **Never delete.** Don't delete files, folders or entries. If something should go, move it into a `_to_delete` folder inside the logbook folder and tell the user.
+- **Newest chat first** on a dashboard: insert the new entry right after the "## Chats, newest first" heading. On All Dashboards, a new dashboard's line goes right after "## Project dashboards".
+- **Never delete.** Don't delete files, folders or entries. If something should go, move it into a `_to_delete` folder inside the logbook folder and tell the user. The one exception is All Dashboards, which only holds pointer lines the AI maintains: removing a project's line there when it moves sections or is dropped is fine.
 - **Leave out secrets.** Replace any password, API key, card number or similar with [redacted].
 - **Sync conflicts.** If the drive has made a conflict copy (OneDrive adds the computer's name, Dropbox adds "conflicted copy"), don't merge it yourself. Keep writing to the original and tell the user the copy exists.
 

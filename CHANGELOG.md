@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.7 (2026-10-19)
+
+- New: 📌 All Dashboards.md at the top of the logbook folder. One line per project, linking its dashboard with its status and last activity, plus Start Here and the Activity Log. Every chat is two clicks from it.
+- New projects go at the top of the list. Lines update in place when a project's status or last activity changes. Projects with no dashboard are listed with their Read first link and move up when they get one. Dropped projects come off.
+- An older logbook gets the file the first time Claude logs to it, built from the Start Here project table. Setup builds it too, and log-session, backfill and catch-up keep it current.
+- Start Here: section 1 starts at All Dashboards, the settings list it, and a new section 6 tells any AI writing to the folder to keep it current.
+
 ## 0.1.6 (2026-10-19)
 
 - New: `catch-up` command finds recent chats with no entry in the logbook (last 14 days by default, or since the logbook started if that's more recent), lists them, and logs the ones you pick, up to 5 per run. It matches on chat links, file names and the first prompt in each Activity Log entry, so it never logs a chat twice.

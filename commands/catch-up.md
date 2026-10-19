@@ -5,7 +5,7 @@ argument-hint: "[optional: how far back, such as 7 days or since 2026-10-01; def
 
 Find recent chats with no entry in the logbook, show them, and log the ones the user picks, following the `logbook` skill and the formats in its `references/formats.md`. The user may have given a time window: $ARGUMENTS
 
-Catch-up only reads past chats and only adds files. It never edits, renames or deletes the user's existing files, except to add entries to dashboards and the Activity Log and update Start Here.md. It logs nothing until the user has picked.
+Catch-up only reads past chats and only adds files. It never edits, renames or deletes the user's existing files, except to add entries to dashboards and the Activity Log and update Start Here.md and All Dashboards. It logs nothing until the user has picked.
 
 1. **Check you can read past chats and reach the folder.**
    - You need Claude's past-chat tools (search past chats, list recent chats, read a past chat). If they aren't available, tell the user in two sentences: catch-up runs in the Claude app with Settings > Search and reference chats turned on. Stop there.
@@ -27,7 +27,7 @@ Catch-up only reads past chats and only adds files. It never edits, renames or d
 
 6. **Show the list and wait.** Start with one line in this shape: "Chats I can see from [start] to [today] ([regular chats / this Claude Project's chats]) with no entry in this logbook:". Then one numbered line per unlogged chat, newest first: date, title, and a short fragment of the first prompt (up to 10 words). Then the "Probably logged" lines, if any. Then ask which to log: numbers, "all", or "none". Suggest leaving out quick lookups and one-line questions, but let the user decide. Do not write anything before they answer.
 
-7. **Place each picked chat.** For each one, pick where it goes from Start Here's project table: the Claude Project it came from, else the project its topic clearly belongs to, else Other chats/ as a one-off. If two projects fit, or the chat is clearly ongoing work with no project yet, ask once for all the uncertain ones in a single question. Create a project's folder, dashboard and Start Here row first if it's new, as the skill describes.
+7. **Place each picked chat.** For each one, pick where it goes from Start Here's project table: the Claude Project it came from, else the project its topic clearly belongs to, else Other chats/ as a one-off. If two projects fit, or the chat is clearly ongoing work with no project yet, ask once for all the uncertain ones in a single question. Create a project's folder, dashboard, Start Here row and All Dashboards line first if it's new, as the skill describes. If the logbook has no All Dashboards yet, build it as the skill says.
 
 8. **Log them, one at a time, oldest first.** Do at most **5** per run; if more were picked, say how many are left and offer to continue. For each chat:
    - Read the whole chat. Page through it until you have every prompt; this is one of the cases where reading a past chat in full is the job.
@@ -37,6 +37,6 @@ Catch-up only reads past chats and only adds files. It never edits, renames or d
    - Write each file as soon as its chat is read, before reading the next, so a cut-off run keeps what it finished.
    - If a long chat won't fit in what's left of this conversation, stop at the last complete prompt, add "Caught up to Prompt N; earlier part only" to the file's Left off, and tell the user to run catch-up again in a new chat to finish it.
 
-9. **Record the run.** Append one Activity Log entry for the whole run, on today's date, not one per chat: "YYYY-MM-DD — Catch-up: logged N earlier chats", one sentence, then one bullet per chat with its date, project and a link to its file. Update dashboards' status lines and Start Here.md's last activity only if they're now wrong.
+9. **Record the run.** Append one Activity Log entry for the whole run, on today's date, not one per chat: "YYYY-MM-DD — Catch-up: logged N earlier chats", one sentence, then one bullet per chat with its date, project and a link to its file. Update dashboards' status lines, Start Here.md's last activity and those projects' lines in All Dashboards only if they're now wrong.
 
 10. **Check and report.** Confirm every new file exists and every link you wrote points at a real file. Reply with "Logged to folder:" and one line per chat file created, by path, then how many unlogged chats are left in the window and the other scope to check (step 3).

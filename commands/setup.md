@@ -1,5 +1,5 @@
 ---
-description: Set up your logbook folder (Start Here, Activity Log, Logbook Format and Other chats), adopt a logbook you already have, or update an older setup
+description: Set up your logbook folder (All Dashboards, Start Here, Activity Log, Logbook Format and Other chats), adopt a logbook you already have, or update an older setup
 argument-hint: "[optional: the folder to use]"
 ---
 
@@ -9,7 +9,7 @@ Set up the user's logbook folder. Follow the `logbook` skill and the formats in 
    - **None reachable:** tell the user to connect the folder they want the logbook in. In the Claude desktop app that's "Add folder" in the + menu beside the message box; in Claude Code, start the session in that folder or give its path. Suggest a folder inside their synced drive, such as OneDrive, iCloud Drive, Dropbox or Google Drive, so the logbook reaches their other devices. Stop there.
    - **One or more reachable:** go on to step 2.
 
-2. **Look for an existing logbook.** Search the reachable folders, two levels deep, for **Start Here.md**. A folder holding Start Here.md together with Activity Log.md or Logbook Format.md is an existing logbook. If you find one, read Start Here.md and don't create a second one. Instead, add what's missing (step 5) and report what you added.
+2. **Look for an existing logbook.** Search the reachable folders, two levels deep, for **Start Here.md**. A folder holding Start Here.md together with Activity Log.md or Logbook Format.md is an existing logbook. If you find one, read Start Here.md and don't create a second one. Instead, add what's missing (step 5) and report what you added. A logbook with no 📌 All Dashboards.md was made by an older version; this run updates it.
 
 3. **Pick the logbook folder.**
    - If the user named a folder, use it.
@@ -29,7 +29,8 @@ Set up the user's logbook folder. Follow the `logbook` skill and the formats in 
    If an existing Start Here already answers all three, skip the questions, but still confirm the logging mode in one line before you write anything, for example: "Logging mode is full: every chat gets its own file with your prompts word for word and my complete responses. Say summary if you'd rather not keep them." Then carry on without waiting.
 
 5. **Create the pieces** that don't exist yet, inside the logbook folder:
-   - **Start Here.md**, from the format in `references/formats.md`, with the folder path and drive filled in under Logbook settings. For an existing Start Here, add any missing section or settings line and update section 1 to the current wording. Don't rewrite the user's own text in sections 2 to 4.
+   - **Start Here.md**, from the format in `references/formats.md`, with the folder path and drive filled in under Logbook settings. For an existing Start Here, add any missing section or settings line (All Dashboards, section 6) and update section 1 to the current wording. Don't rewrite the user's own text in sections 2 to 4.
+   - **📌 All Dashboards.md**, from the format, with the links to Start Here and the Activity Log. If one already exists, keep it and add any missing project lines.
    - **Activity Log.md**, starting with the heading and the line "One entry per chat per day, newest at the bottom."
    - **Logbook Format.md**: the full text of `references/formats.md`, so other AI tools (Gemini, ChatGPT) can write matching files. If it already exists and differs, add the current text at the end below a divider with today's date rather than replacing it.
    - **Other chats/**, a folder for chat files that belong to no project. If an empty folder can't be created in this session, create it the first time a one-off chat is logged instead, and say so.
@@ -39,9 +40,12 @@ Set up the user's logbook folder. Follow the `logbook` skill and the formats in 
    - Add a row to the table if it isn't there.
    - If the folder has no `📌 … — Overview and Chat Log.md`, create the dashboard. Fill **Where things live** from what the user tells you or the folder's files say. Link any of the user's own files in the folder under **Earlier history**. Don't rename, move or convert them.
    - Link the row's "Read first" to the dashboard.
+   - Add the dashboard's line at the top of All Dashboards → Project dashboards, and remove the project's line under Projects without a dashboard yet if it had one.
    - Offer to backfill the project's past chats with the `backfill` command, and say it has to run from a chat inside that project's Claude Project if it has one.
 
-7. **Check existing rows.** If Start Here already has a project table, check that each row's folder still exists. For any row whose folder is gone, list those projects for the user in one message and offer two choices for each: mark the row's status **Dropped** and note "folder removed", or remove the row from the table. Make no change until the user answers. Either choice only edits the Start Here table.
+   Projects already in Start Here's table that the user doesn't pick still get a line in All Dashboards: under Project dashboards if they have a dashboard, otherwise under Projects without a dashboard yet.
+
+7. **Check existing rows.** If Start Here already has a project table, check that each row's folder still exists. For any row whose folder is gone, list those projects for the user in one message and offer two choices for each: mark the row's status **Dropped** and note "folder removed", or remove the row from the table. Make no change until the user answers. Either choice edits the Start Here table and takes the project's line off All Dashboards; neither touches the project's files.
 
 8. **Give the user the always-log line.** In claude.ai chat, a plugin's skill only loads when Claude thinks the conversation matches it, so automatic logging can miss chats. Preferences are read in every chat. Tell the user this in one sentence, then give them the always-log line from `references/formats.md`, in a code block, to paste into Settings > Profile in the field for their preferences.
 
@@ -49,6 +53,6 @@ Set up the user's logbook folder. Follow the `logbook` skill and the formats in 
 
 9. **Mention the limit once.** Logging only works while this computer is on and the chat can reach the folder. A chat on the phone or the web without that link can't write to it; Claude will say so instead of failing quietly.
 
-10. **Log the setup** as a one-off chat (a chat file in Other chats/ and an Activity Log entry), then check that every file you created exists and every link in Start Here opens a real file. Tell the user in two or three lines what was created and where.
+10. **Log the setup** as a one-off chat (a chat file in Other chats/ and an Activity Log entry), then check that every file you created exists and every link in Start Here opens a real file. Tell the user in two or three lines what was created and where, and that 📌 All Dashboards.md at the top of the folder is the file to open first: it links every project and chat.
 
 Never delete, rename or move anything the user already has.

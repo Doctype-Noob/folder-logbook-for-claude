@@ -1,8 +1,8 @@
 {
   "name": "laronge-folder-logbook",
   "displayName": "Folder Logbook for Claude",
-  "version": "0.1.6",
-  "description": "Keeps a record of your work with Claude as Markdown files in a folder you pick, such as one in OneDrive, iCloud Drive, Dropbox or Google Drive: a Start Here map, a dashboard per project, one file per chat with your prompts word for word and Claude's responses, and a cross-project activity log.",
+  "version": "0.1.7",
+  "description": "Keeps a record of your work with Claude as Markdown files in a folder you pick, such as one in OneDrive, iCloud Drive, Dropbox or Google Drive: one All Dashboards file that links every project, a Start Here map, a dashboard per project, one file per chat with your prompts word for word and Claude's responses, and a cross-project activity log.",
   "author": {
     "name": "Josh Laronge",
     "url": "https://laronge.com"

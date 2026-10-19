@@ -22,6 +22,10 @@ One chat's file. Sam's prompt word for word, Claude's response folded under it:
 
 ![A chat file showing the summary, decisions, Sam's first prompt and Claude's response expanded](images/chat-file.png)
 
+All Dashboards, the file to open first. One line per project, so any chat is two clicks away:
+
+![All Dashboards: one line per project with its status and last activity, plus links to Start Here and the Activity Log](images/all-dashboards.png)
+
 Start Here, the map of the whole logbook:
 
 ![Start Here: how to find anything, about the user, how they work with AI, and a table of projects](images/start-here.png)
@@ -51,10 +55,11 @@ The logbook is a few hundred kilobytes of text, so the free tier of any cloud dr
 ## Use it
 
 1. Connect the folder you want the logbook in. In the Claude desktop app that's Add folder in the + menu beside the message box. Pick one inside your synced drive if you want it on your phone.
-2. Run **setup** once: type `/` and pick the logbook setup command, or say "set up my logbook". It creates Start Here, the Activity Log and Logbook Format, asks three quick questions, and offers to set up your projects.
+2. Run **setup** once: type `/` and pick the logbook setup command, or say "set up my logbook". It creates All Dashboards, Start Here, the Activity Log and Logbook Format, asks three quick questions, and offers to set up your projects.
 3. Paste the always-log line setup gives you into Settings > Profile, in your preferences. Do this one. Without it, Claude only logs when it notices a chat is worth keeping, and it misses some.
 4. Work normally. The first time a chat produces ideas, research, a decision or finished work, Claude starts a file for it, asks once what the chat is called in your sidebar, and adds every exchange after that. It ends each reply with one line that starts "Logged to folder:".
-5. Done for the day? Say "wrap up". Claude writes the prompt you paste to start the next chat, in the chat and at the end of the chat file.
+5. Open 📌 All Dashboards.md when you want to find something. It's at the top of the folder, and Claude keeps it current.
+6. Done for the day? Say "wrap up". Claude writes the prompt you paste to start the next chat, in the chat and at the end of the chat file.
 
 ## Commands
 
