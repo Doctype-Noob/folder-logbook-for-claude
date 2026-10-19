@@ -1,7 +1,7 @@
 {
   "name": "laronge-folder-logbook",
   "displayName": "Folder Logbook for Claude",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Keeps a record of your work with Claude as Markdown files in a folder you pick, such as one in OneDrive, iCloud Drive, Dropbox or Google Drive: a Start Here map, a dashboard per project, one file per chat with your prompts word for word and Claude's responses, and a cross-project activity log.",
   "author": {
     "name": "Josh Laronge",
@@ -14,6 +14,7 @@
   "privacyPolicyUrl": "https://github.com/Doctype-Noob/folder-logbook-for-claude/blob/main/PRIVACY.md",
   "termsOfServiceUrl": "https://github.com/Doctype-Noob/folder-logbook-for-claude/blob/main/TERMS.md",
   "license": "MIT",
+  "icon": "./.claude-plugin/icon.png",
   "keywords": [
     "markdown",
     "logging",

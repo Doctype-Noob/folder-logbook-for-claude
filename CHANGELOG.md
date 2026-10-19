@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.5 (2026-10-19)
+
+- Listing: icon, privacy policy, terms of use, and documentation and support links. No change to how it logs.
+
 ## 0.1.4 (2026-10-19)
 
 - The log line starts with "Logged to folder:", so it isn't confused with another logbook such as Craft Logbook for Claude.
