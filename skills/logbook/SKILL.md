@@ -34,9 +34,17 @@ If the settings don't say "Always-log preference: added", offer the always-log l
 
 **First log in a chat.** The test: would the user want to find this conversation again in a month? If yes, log it. The topic doesn't have to be a project already in Start Here. Log when ideas, options, research, a plan, a recommendation, a decision, or finished work (something built, written, published, fixed or set up) come up, or when a project's status changes.
 
-**Don't wait for a decision.** A reply that lays out options or research is worth logging as it stands. Log at the end of the reply where it happens, not at the end of the chat. Chats often end without a goodbye.
+**Don't wait for a decision.** A reply that lays out options or research is worth logging as it stands. Log in the reply where it happens, not at the end of the chat. Chats often end without a goodbye.
 
-**After the first log, log every exchange.** Once this chat has a chat file, append every prompt and response to it at the end of each reply, without judging whether it's worth keeping. Only skip a bare greeting or "thanks".
+**After the first log, log every exchange.** Once this chat has a chat file, append every prompt and response to it in each reply, without judging whether it's worth keeping. Only skip a bare greeting or "thanks".
+
+**Log first, answer last.** In many Claude apps, text written before a tool call shows only as a short summary, and only the text after the last tool call shows in full. If you write the answer and then log, the user sees the log line and loses the answer. So in every reply that logs:
+
+1. Do the work the user asked for (searches, edits, files).
+2. Make all the log writes, with the response written into the chat file as you're about to give it.
+3. Then write your whole answer as the last text in the reply, ending with the "Logged to folder:" line.
+
+"At the end of that same reply" in the always-log line means the log line comes last, not the writes. If a write fails, say so in that last line instead.
 
 Don't start a chat file for small talk or a quick factual question with nothing to keep.
 
@@ -128,4 +136,4 @@ Files have no blocks or IDs, and a synced drive can be slow or offline, so:
 - **Refer to files by path** in your replies, such as *Website → 📌 Website — Overview and Chat Log*.
 - **Keep the user's words.** Quote prompts exactly. Don't tidy them.
 - **Leave out secrets.** If a prompt or response contains a password, API key, card number, or similar, replace that value with [redacted] in the log.
-- **Tell the user once.** After logging, mention it in one short line at the end of your reply starting with "Logged to folder:" so it can't be mistaken for another logbook ("Logged to folder: Website → Website setup — Decisions and Prompt Log.md"). Don't narrate each write.
+- **Tell the user once.** After logging, mention it in one short line as the last line of your answer, which comes after every tool call starting with "Logged to folder:" so it can't be mistaken for another logbook ("Logged to folder: Website → Website setup — Decisions and Prompt Log.md"). Don't narrate each write.

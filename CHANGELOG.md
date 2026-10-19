@@ -6,6 +6,7 @@
 - New projects go at the top of the list. Lines update in place when a project's status or last activity changes. Projects with no dashboard are listed with their Read first link and move up when they get one. Dropped projects come off.
 - An older logbook gets the file the first time Claude logs to it, built from the Start Here project table. Setup builds it too, and log-session, backfill and catch-up keep it current.
 - When Claude builds All Dashboards on an older logbook, it also adds the All Dashboards section to Logbook Format.md, so other AI tools know to keep it current. Setup adds only new or changed sections to an older Logbook Format.
+- Claude makes the log writes before it writes its answer, so the answer is the last thing in the reply. In the Claude app, text written before a tool call shows only as a summary, so answering first and logging after left people with just the log line.
 - Start Here: section 1 starts at All Dashboards, the settings list it, and a new section 6 tells any AI writing to the folder to keep it current.
 
 ## 0.1.6 (2026-10-19)
